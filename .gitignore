@@ -1,0 +1,6 @@
+# ignore virtual environment
+venv/
+# ignore ide project settings
+.idea/
+# ignore database
+db.sqlite3

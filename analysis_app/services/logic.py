@@ -34,7 +34,11 @@ def predict(data: dict) -> float:
     df = pd.DataFrame(data)
     model = CatBoostRegressor()
     model.load_model(MODEL_ROOT, format="json")
-    return model.predict(data=df)
+    return float(model.predict(data=df))
+
+
+def gen_redundant_data(salary: int):
+    return [round(salary / 100 * 2 * i) for i in range(50 + 1)]
 
 
 if __name__ == "__main__":

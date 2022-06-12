@@ -13,7 +13,6 @@ class CharacteristicForm(forms.Form):
     gender = forms.ChoiceField(choices=CHOICES_GENDER,
                                initial=CHOICES_GENDER[0],
                                widget=forms.RadioSelect(
-                                   # renderer=HorizontalRadioRenderer,
                                    attrs={'class': 'inline'}
                                ))
 
@@ -51,19 +50,19 @@ class CharacteristicForm(forms.Form):
                                           widget=forms.CheckboxInput(
                                               attrs={'class': 'form-check-input', 'type': 'checkbox'}))
 
-    BINARY_FIELDS = [flag_own_realty, flag_personal_phone, flag_work_phone, flag_email, flag_employed, flag_own_car,
-                     flag_is_pensioner, flag_is_resident]
-
     # input fields
 
-    cnt_children_min = 0
-    cnt_children_max = 10
-    cnt_children = forms.IntegerField(label='Количество детей',
-                                      min_value=cnt_children_min, max_value=cnt_children_max,
-                                      widget=forms.NumberInput(
-                                          attrs={'type': 'number', 'class': 'form-control',
-                                                 'value': cnt_children_min, 'min': cnt_children_min,
-                                                 'max': cnt_children_max}))
+    lifetime = 100
+    current_year = datetime.now().year
+    CHOICES_BIRTH_YEAR = [(str(i), str(i)) for i in range(current_year - lifetime, current_year + 1)]
+    birth_year = forms.ChoiceField(label='Год рождения', choices=CHOICES_BIRTH_YEAR,
+                                   initial=CHOICES_BIRTH_YEAR[-1],
+                                   widget=forms.Select(attrs={'class': 'form-select'}))
+
+    CITIES = Cities.objects.all()
+    city = forms.ModelChoiceField(label='Город', initial=CITIES.get(name="Москва"),
+                                  queryset=CITIES,
+                                  widget=forms.Select(attrs={'class': 'form-select'}))
 
     CHOICES_EDUCATION_TYPE = (
         ('0', 'Дошкольное'),
@@ -93,23 +92,6 @@ class CharacteristicForm(forms.Form):
                                            'value': salary_min, 'min': salary_min,
                                            'max': salary_max}))
 
-    family_income_min = 0
-    family_income_max = 999999999
-    family_income = forms.IntegerField(label='Семейный доход',
-                                       min_value=family_income_min, max_value=family_income_max,
-                                       widget=forms.NumberInput(
-                                           attrs={'type': 'number', 'class': 'form-control',
-                                                  'value': family_income_min, 'min': family_income_min,
-                                                  'max': family_income_max}))
-
-    CHOICES_FAMILY_STATUS = (
-        ('0', 'Холост / Не замужем'),
-        ('1', 'В браке'),
-        ('2', 'Разведен(а)')
-    )
-    family_status = forms.ChoiceField(label='Семейный статус', choices=CHOICES_FAMILY_STATUS,
-                                      widget=forms.Select(attrs={'class': 'form-select'}))
-
     income_total_min = 0
     income_total_max = 99999999
     income_total = forms.IntegerField(label='Годовой доход',
@@ -118,6 +100,14 @@ class CharacteristicForm(forms.Form):
                                           attrs={'type': 'number', 'class': 'form-control',
                                                  'value': income_total_min, 'min': income_total_min,
                                                  'max': income_total_max}))
+
+    CHOICES_FAMILY_STATUS = (
+        ('0', 'Холост / Не замужем'),
+        ('1', 'В браке'),
+        ('2', 'Разведен(а)')
+    )
+    family_status = forms.ChoiceField(label='Семейный статус', choices=CHOICES_FAMILY_STATUS,
+                                      widget=forms.Select(attrs={'class': 'form-select'}))
 
     cnt_dependent_min = 0
     cnt_dependent_max = 10
@@ -128,14 +118,20 @@ class CharacteristicForm(forms.Form):
                                                   'value': cnt_dependent_min, 'min': cnt_dependent_min,
                                                   'max': cnt_dependent_max}))
 
-    lifetime = 100
-    current_year = datetime.now().year
-    CHOICES_BIRTH_YEAR = [(str(i), str(i)) for i in range(current_year - lifetime, current_year + 1)]
-    birth_year = forms.ChoiceField(label='Год рождения', choices=CHOICES_BIRTH_YEAR,
-                                   initial=CHOICES_BIRTH_YEAR[-1],
-                                   widget=forms.Select(attrs={'class': 'form-select'}))
+    cnt_children_min = 0
+    cnt_children_max = 10
+    cnt_children = forms.IntegerField(label='Количество детей',
+                                      min_value=cnt_children_min, max_value=cnt_children_max,
+                                      widget=forms.NumberInput(
+                                          attrs={'type': 'number', 'class': 'form-control',
+                                                 'value': cnt_children_min, 'min': cnt_children_min,
+                                                 'max': cnt_children_max}))
 
-    CITIES = Cities.objects.all()
-    city = forms.ModelChoiceField(label='Город', initial=CITIES.get(name="Москва"),
-                                  queryset=CITIES,
-                                  widget=forms.Select(attrs={'class': 'form-select'}))
+    family_income_min = 0
+    family_income_max = 999999999
+    family_income = forms.IntegerField(label='Семейный доход',
+                                       min_value=family_income_min, max_value=family_income_max,
+                                       widget=forms.NumberInput(
+                                           attrs={'type': 'number', 'class': 'form-control',
+                                                  'value': family_income_min, 'min': family_income_min,
+                                                  'max': family_income_max}))

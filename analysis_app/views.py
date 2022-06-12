@@ -1,4 +1,4 @@
-from django.http import HttpResponseNotFound
+from django.http import HttpResponseNotFound, JsonResponse
 from django.shortcuts import render
 from .forms import *
 from .models import *
@@ -18,9 +18,13 @@ def index(request):
     return render(request, "index.html", {
         "title": "Dashboard",
         "form": form,
-        "list_cities": [item["name"] for item in Cities.objects.values('name').distinct()]
     })
 
 
+def get_cities_info(request):
+    response = [item["name"].strip() for item in Cities.objects.values('name').distinct()]
+    return JsonResponse(response, safe=False)
+
+
 def page_not_found(request, exception):
-    return HttpResponseNotFound("<h1>Страница не найдена</h1>")
+    return HttpResponseNotFound("<h1>Error 404</h1>")

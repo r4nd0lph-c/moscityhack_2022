@@ -112,4 +112,25 @@
 
         <button class="btn btn-primary mt-4 mb-5" type="submit">Анализировать</button>
     </form>
+
+    <script type="text/javascript">
+        function get_cities() {
+            $.ajax({
+                url: "{% url 'get_cities_info' %}",
+                success: function (response) {
+                    gen_city_field(response);
+                },
+                error: function () {
+                    console.log("request (cities info) ERROR");
+                }
+            });
+            return false;
+        }
+
+        function gen_city_field(cities) {
+            console.log(cities);
+        }
+
+        get_cities();
+    </script>
 {% endblock %}

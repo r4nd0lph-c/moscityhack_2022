@@ -1,15 +1,13 @@
 from django import forms
 from datetime import datetime
 from .models import *
+from .services import choices
 
 
 class CharacteristicForm(forms.Form):
     # gender
 
-    CHOICES_GENDER = (
-        ('male', 'Мужчина'),
-        ('female', 'Женщина')
-    )
+    CHOICES_GENDER = choices.CHOICES_GENDER
     gender = forms.ChoiceField(choices=CHOICES_GENDER,
                                initial=CHOICES_GENDER[0],
                                widget=forms.RadioSelect(
@@ -42,6 +40,10 @@ class CharacteristicForm(forms.Form):
                                        widget=forms.CheckboxInput(
                                            attrs={'class': 'form-check-input', 'type': 'checkbox'}))
 
+    flag_businessman = forms.BooleanField(label='Бизнесмен', required=False, initial=False,
+                                          widget=forms.CheckboxInput(
+                                              attrs={'class': 'form-check-input', 'type': 'checkbox'}))
+
     flag_is_pensioner = forms.BooleanField(label='Пенсионер', required=False, initial=False,
                                            widget=forms.CheckboxInput(
                                                attrs={'class': 'form-check-input', 'type': 'checkbox'}))
@@ -64,13 +66,7 @@ class CharacteristicForm(forms.Form):
                                   queryset=CITIES,
                                   widget=forms.Select(attrs={'class': 'form-select'}))
 
-    CHOICES_EDUCATION_TYPE = (
-        ('0', 'Дошкольное'),
-        ('1', 'Начальное'),
-        ('2', 'Основное общее'),
-        ('3', 'Основное специальноее'),
-        ('4', 'Высшее')
-    )
+    CHOICES_EDUCATION_TYPE = choices.CHOICES_EDUCATION_TYPE
     education_type = forms.ChoiceField(label='Уровень образования', choices=CHOICES_EDUCATION_TYPE,
                                        initial=CHOICES_EDUCATION_TYPE[2],
                                        widget=forms.Select(attrs={'class': 'form-select'}))
@@ -101,10 +97,7 @@ class CharacteristicForm(forms.Form):
                                                  'value': income_total_min, 'min': income_total_min,
                                                  'max': income_total_max}))
 
-    CHOICES_FAMILY_STATUS = (
-        ('0', 'Холост / Не замужем'),
-        ('1', 'В браке'),
-    )
+    CHOICES_FAMILY_STATUS = choices.CHOICES_FAMILY_STATUS
     family_status = forms.ChoiceField(label='Семейный статус', choices=CHOICES_FAMILY_STATUS,
                                       widget=forms.Select(attrs={'class': 'form-select'}))
 

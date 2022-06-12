@@ -37,8 +37,15 @@ def predict(data: dict) -> float:
     return float(model.predict(data=df))
 
 
-def gen_redundant_data(salary: int):
-    return [round(salary / 100 * 2 * i) for i in range(50 + 1)]
+# def gen_redundant_data(salary: int):
+#     return [round(salary / 100 * 2 * i) for i in range(50 + 1)]
+
+def gen_10to2() -> list:
+    res = []
+    for i in range(31, -1, -1):
+        binary = "{0:05b}".format(i)
+        res.append([int(item) for item in binary])
+    return res
 
 
 if __name__ == "__main__":

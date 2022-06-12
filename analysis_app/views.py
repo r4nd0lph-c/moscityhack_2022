@@ -9,19 +9,34 @@ from .services import logic
 
 
 def index(request):
-    list_x, list_y = None, None
+    # list_x, list_y = None, None
+    data = None
+    main_predict = []
+    brute_predict = []
     if request.method == "POST":
         form = CharacteristicForm(request.POST)
         if form.is_valid():
             data = logic.data_transform(form.cleaned_data)
-            predict = logic.predict(data)
-            # print(data)
+            main_predict = logic.predict(data)
+            brute_params = logic.gen_10to2()
+            for params in brute_params:
+                brute_data = data.copy()
+                brute_data["flag_own_realty"] = params[0]
+                brute_data["flag_own_car"] = params[1]
+                brute_data["flag_employed"] = params[2]
+                brute_data["flag_is_pensioner"] = params[3]
+                brute_data["family_status"] = params[4]
+                brute_predict.append(round(logic.predict(brute_data), 2))
+            print(data)
+            print(main_predict)
+            print("-----")
+            print(brute_predict)
             # print(predict)
-            list_x = logic.gen_redundant_data(data["salary"][0])
-            list_y = []
-            for i in range(len(list_x)):
-                data["salary"][0] = list_x[i]
-                list_y.append(logic.predict(data))
+            # list_x = logic.gen_redundant_data(data["salary"][0])
+            # list_y = []
+            # for i in range(len(list_x)):
+            #     data["salary"][0] = list_x[i]
+            #     list_y.append(logic.predict(data))
             # print(list_x, '\n', list_y)
     else:
         form = CharacteristicForm()
@@ -29,8 +44,9 @@ def index(request):
     return render(request, "index.html", {
         "title": "Dashboard",
         "form": form,
-        "list_x": list_x,
-        "list_y": list_y
+        "data": data,
+        "predict": main_predict,
+        "brute_predict": brute_predict
     })
 
 

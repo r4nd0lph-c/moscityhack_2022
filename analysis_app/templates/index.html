@@ -102,8 +102,280 @@
             </div>
         </form>
 
-        <div class="row">
-        </div>
+        {% if brute_predict|length > 1 %}
+            <div class="row mt-3 placeForTable">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Результат</th>
+                        <th scope="col">Недвижимость</th>
+                        <th scope="col">Автомобиль</th>
+                        <th scope="col">Трудоустроен</th>
+                        <th scope="col">Пенсионер</th>
+                        <th scope="col">В браке</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row" class="result31">{{ brute_predict.31 }}</th>
+                        <td class="Yes">Да</td>
+                        <td class="Yes">Да</td>
+                        <td class="Yes">Да</td>
+                        <td class="Yes">Да</td>
+                        <td class="Yes">Да</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="result30">{{ brute_predict.30 }}</th>
+                        <td class="Yes">Да</td>
+                        <td class="Yes">Да</td>
+                        <td class="Yes">Да</td>
+                        <td class="Yes">Да</td>
+                        <td class="No">Нет</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="result29">{{ brute_predict.29 }}</th>
+                        <td class="Yes">Да</td>
+                        <td class="Yes">Да</td>
+                        <td class="Yes">Да</td>
+                        <td class="No">Нет</td>
+                        <td class="Yes">Да</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="result28">{{ brute_predict.28 }}</th>
+                        <td class="Yes">Да</td>
+                        <td class="Yes">Да</td>
+                        <td class="Yes">Да</td>
+                        <td class="No">Нет</td>
+                        <td class="No">Нет</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="result27">{{ brute_predict.27 }}</th>
+                        <td class="Yes">Да</td>
+                        <td class="Yes">Да</td>
+                        <td class="No">Нет</td>
+                        <td class="Yes">Да</td>
+                        <td class="Yes">Да</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="result26">{{ brute_predict.26 }}</th>
+                        <td class="Yes">Да</td>
+                        <td class="Yes">Да</td>
+                        <td class="No">Нет</td>
+                        <td class="Yes">Да</td>
+                        <td class="No">Нет</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="result25">{{ brute_predict.25 }}</th>
+                        <td class="Yes">Да</td>
+                        <td class="Yes">Да</td>
+                        <td class="No">Нет</td>
+                        <td class="No">Нет</td>
+                        <td class="Yes">Да</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="result24">{{ brute_predict.24 }}</th>
+                        <td class="Yes">Да</td>
+                        <td class="Yes">Да</td>
+                        <td class="No">Нет</td>
+                        <td class="No">Нет</td>
+                        <td class="No">Нет</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="result23">{{ brute_predict.23 }}</th>
+                        <td class="Yes">Да</td>
+                        <td class="No">Нет</td>
+                        <td class="Yes">Да</td>
+                        <td class="Yes">Да</td>
+                        <td class="Yes">Да</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="result22">{{ brute_predict.22 }}</th>
+                        <td class="Yes">Да</td>
+                        <td class="No">Нет</td>
+                        <td class="Yes">Да</td>
+                        <td class="Yes">Да</td>
+                        <td class="No">Нет</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="result21">{{ brute_predict.21 }}</th>
+                        <td class="Yes">Да</td>
+                        <td class="No">Нет</td>
+                        <td class="Yes">Да</td>
+                        <td class="No">Нет</td>
+                        <td class="Yes">Да</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="result20">{{ brute_predict.20 }}</th>
+                        <td class="Yes">Да</td>
+                        <td class="No">Нет</td>
+                        <td class="Yes">Да</td>
+                        <td class="No">Нет</td>
+                        <td class="No">Нет</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="result19">{{ brute_predict.19 }}</th>
+                        <td class="Yes">Да</td>
+                        <td class="No">Нет</td>
+                        <td class="No">Нет</td>
+                        <td class="Yes">Да</td>
+                        <td class="Yes">Да</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="result18">{{ brute_predict.18 }}</th>
+                        <td class="Yes">Да</td>
+                        <td class="No">Нет</td>
+                        <td class="No">Нет</td>
+                        <td class="Yes">Да</td>
+                        <td class="No">Нет</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="result17">{{ brute_predict.17 }}</th>
+                        <td class="Yes">Да</td>
+                        <td class="No">Нет</td>
+                        <td class="No">Нет</td>
+                        <td class="No">Нет</td>
+                        <td class="Yes">Да</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="result16">{{ brute_predict.16 }}</th>
+                        <td class="Yes">Да</td>
+                        <td class="No">Нет</td>
+                        <td class="No">Нет</td>
+                        <td class="No">Нет</td>
+                        <td class="No">Нет</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="result15">{{ brute_predict.15 }}</th>
+                        <td class="No">Нет</td>
+                        <td class="Yes">Да</td>
+                        <td class="Yes">Да</td>
+                        <td class="Yes">Да</td>
+                        <td class="Yes">Да</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="result14">{{ brute_predict.14 }}</th>
+                        <td class="No">Нет</td>
+                        <td class="Yes">Да</td>
+                        <td class="Yes">Да</td>
+                        <td class="Yes">Да</td>
+                        <td class="No">Нет</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="result13">{{ brute_predict.13 }}</th>
+                        <td class="No">Нет</td>
+                        <td class="Yes">Да</td>
+                        <td class="Yes">Да</td>
+                        <td class="No">Нет</td>
+                        <td class="Yes">Да</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="result12">{{ brute_predict.12 }}</th>
+                        <td class="No">Нет</td>
+                        <td class="Yes">Да</td>
+                        <td class="Yes">Да</td>
+                        <td class="No">Нет</td>
+                        <td class="No">Нет</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="result11">{{ brute_predict.11 }}</th>
+                        <td class="No">Нет</td>
+                        <td class="Yes">Да</td>
+                        <td class="No">Нет</td>
+                        <td class="Yes">Да</td>
+                        <td class="Yes">Да</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="result10">{{ brute_predict.10 }}</th>
+                        <td class="No">Нет</td>
+                        <td class="Yes">Да</td>
+                        <td class="No">Нет</td>
+                        <td class="Yes">Да</td>
+                        <td class="No">Нет</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="result9">{{ brute_predict.9 }}</th>
+                        <td class="No">Нет</td>
+                        <td class="Yes">Да</td>
+                        <td class="No">Нет</td>
+                        <td class="No">Нет</td>
+                        <td class="Yes">Да</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="result8">{{ brute_predict.8 }}</th>
+                        <td class="No">Нет</td>
+                        <td class="Yes">Да</td>
+                        <td class="No">Нет</td>
+                        <td class="No">Нет</td>
+                        <td class="No">Нет</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="result7">{{ brute_predict.7 }}</th>
+                        <td class="No">Нет</td>
+                        <td class="No">Нет</td>
+                        <td class="Yes">Да</td>
+                        <td class="Yes">Да</td>
+                        <td class="Yes">Да</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="result6">{{ brute_predict.6 }}</th>
+                        <td class="No">Нет</td>
+                        <td class="No">Нет</td>
+                        <td class="Yes">Да</td>
+                        <td class="Yes">Да</td>
+                        <td class="No">Нет</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="result5">{{ brute_predict.5 }}</th>
+                        <td class="No">Нет</td>
+                        <td class="No">Нет</td>
+                        <td class="Yes">Да</td>
+                        <td class="No">Нет</td>
+                        <td class="Yes">Да</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="result4">{{ brute_predict.4 }}</th>
+                        <td class="No">Нет</td>
+                        <td class="No">Нет</td>
+                        <td class="Yes">Да</td>
+                        <td class="No">Нет</td>
+                        <td class="No">Нет</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="result3">{{ brute_predict.3 }}</th>
+                        <td class="No">Нет</td>
+                        <td class="No">Нет</td>
+                        <td class="No">Нет</td>
+                        <td class="Yes">Да</td>
+                        <td class="Yes">Да</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="result2">{{ brute_predict.2 }}</th>
+                        <td class="No">Нет</td>
+                        <td class="No">Нет</td>
+                        <td class="No">Нет</td>
+                        <td class="Yes">Да</td>
+                        <td class="No">Нет</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="result1">{{ brute_predict.1 }}</th>
+                        <td class="No">Нет</td>
+                        <td class="No">Нет</td>
+                        <td class="No">Нет</td>
+                        <td class="No">Нет</td>
+                        <td class="Yes">Да</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="result0">{{ brute_predict.0 }}</th>
+                        <td class="No">Нет</td>
+                        <td class="No">Нет</td>
+                        <td class="No">Нет</td>
+                        <td class="No">Нет</td>
+                        <td class="No">Нет</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        {% endif %}
     </div>
 
     <script type="text/javascript">
@@ -125,5 +397,7 @@
         }
 
         get_cities();
+
+        console.log({{ list_x | safe }});
     </script>
 {% endblock %}

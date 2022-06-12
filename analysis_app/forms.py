@@ -4,6 +4,19 @@ from .models import *
 
 
 class CharacteristicForm(forms.Form):
+    # gender
+
+    CHOICES_GENDER = (
+        ('male', 'Мужчина'),
+        ('female', 'Женщина')
+    )
+    gender = forms.ChoiceField(choices=CHOICES_GENDER,
+                               initial=CHOICES_GENDER[0],
+                               widget=forms.RadioSelect(
+                                   # renderer=HorizontalRadioRenderer,
+                                   attrs={'class': 'inline'}
+                               ))
+
     # checkboxes
 
     flag_own_realty = forms.BooleanField(label='Имеет недвижимость', required=False, initial=False,
@@ -14,15 +27,15 @@ class CharacteristicForm(forms.Form):
                                       widget=forms.CheckboxInput(
                                           attrs={'class': 'form-check-input', 'type': 'checkbox'}))
 
-    flag_personal_phone = forms.BooleanField(label='Указал личный телефон', required=False, initial=False,
+    flag_personal_phone = forms.BooleanField(label='Указал(а) личный телефон', required=False, initial=False,
                                              widget=forms.CheckboxInput(
                                                  attrs={'class': 'form-check-input', 'type': 'checkbox'}))
 
-    flag_work_phone = forms.BooleanField(label='Указал рабочий телефон', required=False, initial=False,
+    flag_work_phone = forms.BooleanField(label='Указал(а) рабочий телефон', required=False, initial=False,
                                          widget=forms.CheckboxInput(
                                              attrs={'class': 'form-check-input', 'type': 'checkbox'}))
 
-    flag_email = forms.BooleanField(label='Указал электронную почту', required=False, initial=False,
+    flag_email = forms.BooleanField(label='Указал(а) электронную почту', required=False, initial=False,
                                     widget=forms.CheckboxInput(
                                         attrs={'class': 'form-check-input', 'type': 'checkbox'}))
 
@@ -49,7 +62,6 @@ class CharacteristicForm(forms.Form):
                                       min_value=cnt_children_min, max_value=cnt_children_max,
                                       widget=forms.NumberInput(
                                           attrs={'type': 'number', 'class': 'form-control',
-                                                 'oninput': 'this.previousElementSibling.value = this.value',
                                                  'value': cnt_children_min, 'min': cnt_children_min,
                                                  'max': cnt_children_max}))
 
@@ -64,13 +76,13 @@ class CharacteristicForm(forms.Form):
                                        initial=CHOICES_EDUCATION_TYPE[2],
                                        widget=forms.Select(attrs={'class': 'form-select'}))
 
-    CHOICES_INCOME_TYPE = (
-        ('0', 'Зарплата'),
-        ('1', 'Дивиденты'),
-        ('2', 'Взятки')
-    )
-    income_type = forms.ChoiceField(label='Категория дохода', choices=CHOICES_INCOME_TYPE,
-                                    widget=forms.Select(attrs={'class': 'form-select'}))
+    # CHOICES_INCOME_TYPE = (
+    #     ('0', 'Зарплата'),
+    #     ('1', 'Дивиденты'),
+    #     ('2', 'Взятки')
+    # )
+    # income_type = forms.ChoiceField(label='Категория дохода', choices=CHOICES_INCOME_TYPE,
+    #                                 widget=forms.Select(attrs={'class': 'form-select'}))
 
     salary_min = 0
     salary_max = 999999999
@@ -78,7 +90,6 @@ class CharacteristicForm(forms.Form):
                                 min_value=salary_min, max_value=salary_max,
                                 widget=forms.NumberInput(
                                     attrs={'type': 'number', 'class': 'form-control',
-                                           'oninput': 'this.previousElementSibling.value = this.value',
                                            'value': salary_min, 'min': salary_min,
                                            'max': salary_max}))
 
@@ -88,7 +99,6 @@ class CharacteristicForm(forms.Form):
                                        min_value=family_income_min, max_value=family_income_max,
                                        widget=forms.NumberInput(
                                            attrs={'type': 'number', 'class': 'form-control',
-                                                  'oninput': 'this.previousElementSibling.value = this.value',
                                                   'value': family_income_min, 'min': family_income_min,
                                                   'max': family_income_max}))
 
@@ -106,17 +116,15 @@ class CharacteristicForm(forms.Form):
                                       min_value=income_total_min, max_value=income_total_max,
                                       widget=forms.NumberInput(
                                           attrs={'type': 'number', 'class': 'form-control',
-                                                 'oninput': 'this.previousElementSibling.value = this.value',
                                                  'value': income_total_min, 'min': income_total_min,
                                                  'max': income_total_max}))
 
     cnt_dependent_min = 0
     cnt_dependent_max = 10
-    cnt_dependent = forms.IntegerField(label='Количество детей',
+    cnt_dependent = forms.IntegerField(label='Количество иждивенцев',
                                        min_value=cnt_dependent_min, max_value=cnt_dependent_max,
                                        widget=forms.NumberInput(
                                            attrs={'type': 'number', 'class': 'form-control',
-                                                  'oninput': 'this.previousElementSibling.value = this.value',
                                                   'value': cnt_dependent_min, 'min': cnt_dependent_min,
                                                   'max': cnt_dependent_max}))
 

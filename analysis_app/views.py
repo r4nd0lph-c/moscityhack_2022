@@ -13,7 +13,9 @@ def index(request):
         form = CharacteristicForm(request.POST)
         if form.is_valid():
             data = logic.data_transform(form.cleaned_data)
+            predict = logic.predict(data)
             print(data)
+            print(predict)
     else:
         form = CharacteristicForm()
 

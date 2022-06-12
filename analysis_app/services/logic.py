@@ -1,3 +1,7 @@
+import os
+from moscityhack_2022.settings import MODEL_ROOT
+import pandas as pd
+from catboost import CatBoostRegressor
 from analysis_app.services import choices
 
 
@@ -24,6 +28,13 @@ def data_transform(raw: dict) -> dict:
     prepared["amount_children"] = [raw["cnt_children"]]
     prepared["family_income"] = [raw["family_income"]]
     return prepared
+
+
+def predict(data: dict) -> float:
+    df = pd.DataFrame(data)
+    model = CatBoostRegressor()
+    model.load_model(MODEL_ROOT, format="json")
+    return model.predict(data=df)
 
 
 if __name__ == "__main__":

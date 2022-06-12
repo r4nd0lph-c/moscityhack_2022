@@ -1,102 +1,115 @@
 {% extends 'base.html' %}
 
 {% block body %}
-    <div class="container-lg">
-        <form action="{% url 'index' %}" method="post">
-            {% csrf_token %}
-            <div class="row mb-3">
-                <div class="col">
-                    <h2>Характеристики клиента</h2>
-                </div>
-                <div class="col-8">
-                    <div class="characteristic row">
-                        <div class="btn-group" role="group">
-                            {{ form.gender }}
-                        </div>
-                        {#                        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">#}
-                        {#                            <input type="radio" class="btn-check" name="sex" id="btnradio1" autocomplete="off" checked>#}
-                        {#                            <label class="btn btn-outline-secondary" for="btnradio1">Мужчина</label>#}
-                        {##}
-                        {#                            <input type="radio" class="btn-check" name="sex" id="btnradio2" autocomplete="off">#}
-                        {#                            <label class="btn btn-outline-secondary" for="btnradio2">Женщина</label>#}
-                        {#                        </div>#}
-                    </div>
-                </div>
-            </div>
+    {#    <div class="container-lg">#}
+    {#        <form action="{% url 'index' %}" method="post">#}
+    {#            {% csrf_token %}#}
+    {#            <div class="row mb-3">#}
+    {#                <div class="col">#}
+    {#                    <h2>Характеристики клиента</h2>#}
+    {#                </div>#}
+    {#                <div class="col-8">#}
+    {#                    <div class="characteristic row">#}
+    {#                        <div class="btn-group" role="group">#}
+    {#                            {{ form.gender }}#}
+    {#                        </div>#}
+    {#                        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">#}
+    {#                            <input type="radio" class="btn-check" name="sex" id="btnradio1" autocomplete="off" checked>#}
+    {#                            <label class="btn btn-outline-secondary" for="btnradio1">Мужчина</label>#}
+    {##}
+    {#                            <input type="radio" class="btn-check" name="sex" id="btnradio2" autocomplete="off">#}
+    {#                            <label class="btn btn-outline-secondary" for="btnradio2">Женщина</label>#}
+    {#                        </div>#}
+    {#                    </div>#}
+    {#                </div>#}
+    {#            </div>#}
+    {##}
+    {#            <div class="row">#}
+    {#                <div class="col-4">#}
+    {#                    <h4>Обладает:</h4>#}
+    {#                    <div class="form-check mt-2">#}
+    {#                        {{ form.own_realty }}#}
+    {#                        <label class="form-check-label"#}
+    {#                               for="{{ form.own_realty.id_for_label }}">{{ form.own_realty.label }}</label>#}
+    {#                    </div>#}
+    {##}
+    {#                    <div class="form-check mt-2">#}
+    {#                        {{ form.own_personal_phnum }}#}
+    {#                        <label class="form-check-label"#}
+    {#                               for="{{ form.own_personal_phnum.id_for_label }}">{{ form.own_personal_phnum.label }}</label>#}
+    {#                    </div>#}
+    {##}
+    {#                    <div class="form-check mt-2">#}
+    {#                        {{ form.own_work_phnum }}#}
+    {#                        <label class="form-check-label"#}
+    {#                               for="{{ form.own_work_phnum.id_for_label }}">{{ form.own_work_phnum.label }}</label>#}
+    {#                    </div>#}
+    {##}
+    {#                    <div class="form-check mt-2">#}
+    {#                        {{ form.own_email }}#}
+    {#                        <label class="form-check-label"#}
+    {#                               for="{{ form.own_email.id_for_label }}">{{ form.own_email.label }}</label>#}
+    {#                    </div>#}
+    {##}
+    {#                    <div class="form-check mt-2">#}
+    {#                        {{ form.own_car }}#}
+    {#                        <label class="form-check-label"#}
+    {#                               for="{{ form.own_car.id_for_label }}">{{ form.own_car.label }}</label>#}
+    {#                    </div>#}
+    {#                </div>#}
+    {##}
+    {#                <div class="col">#}
+    {#                    <div class="input-group mt-2">#}
+    {#                        <label class="input-group-text"#}
+    {#                               for="{{ form.family_status.id_for_label }}">{{ form.family_status.label }}</label>#}
+    {#                        {{ form.family_status }}#}
+    {#                    </div>#}
+    {##}
+    {#                    <div class="input-group mt-2">#}
+    {#                        <label class="input-group-text"#}
+    {#                               for="{{ form.income_type.id_for_label }}">{{ form.income_type.label }}</label>#}
+    {#                        {{ form.income_type }}#}
+    {#                    </div>#}
+    {##}
+    {#                    <div class="input-group mt-2">#}
+    {#                        <label class="input-group-text"#}
+    {#                               for="{{ form.education_type.id_for_label }}">{{ form.education_type.label }}</label>#}
+    {#                        {{ form.education_type }}#}
+    {#                    </div>#}
+    {##}
+    {#                    <div class="input-group mt-2">#}
+    {#                        <label class="input-group-text"#}
+    {#                               for="{{ form.cnt_children.id_for_label }}">{{ form.cnt_children.label }}</label>#}
+    {#                        {{ form.cnt_children }}#}
+    {#                    </div>#}
+    {##}
+    {#                    <div class="input-group mt-2">#}
+    {#                        <label class="input-group-text"#}
+    {#                               for="{{ form.income_total.id_for_label }}">{{ form.income_total.label }}</label>#}
+    {#                        {{ form.income_total }}#}
+    {#                    </div>#}
+    {#                </div>#}
+    {#            </div>#}
+    {##}
+    {##}
+    {#            <button class="btn btn-lg btn-primary mt-4 mb-5" type="submit">Анализировать</button>#}
+    {#        </form>#}
+    {##}
+    {#        <div class="row">#}
+    {##}
+    {#        </div>#}
+    {#    </div>#}
 
-            <div class="row">
-                <div class="col-4">
-                    <h4>Обладает:</h4>
-                    <div class="form-check mt-2">
-                        {{ form.own_realty }}
-                        <label class="form-check-label"
-                               for="{{ form.own_realty.id_for_label }}">{{ form.own_realty.label }}</label>
-                    </div>
+    <form action="{% url 'index' %}" method="post">
+        {% csrf_token %}
 
-                    <div class="form-check mt-2">
-                        {{ form.own_personal_phnum }}
-                        <label class="form-check-label"
-                               for="{{ form.own_personal_phnum.id_for_label }}">{{ form.own_personal_phnum.label }}</label>
-                    </div>
-
-                    <div class="form-check mt-2">
-                        {{ form.own_work_phnum }}
-                        <label class="form-check-label"
-                               for="{{ form.own_work_phnum.id_for_label }}">{{ form.own_work_phnum.label }}</label>
-                    </div>
-
-                    <div class="form-check mt-2">
-                        {{ form.own_email }}
-                        <label class="form-check-label"
-                               for="{{ form.own_email.id_for_label }}">{{ form.own_email.label }}</label>
-                    </div>
-
-                    <div class="form-check mt-2">
-                        {{ form.own_car }}
-                        <label class="form-check-label"
-                               for="{{ form.own_car.id_for_label }}">{{ form.own_car.label }}</label>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="input-group mt-2">
-                        <label class="input-group-text"
-                               for="{{ form.family_status.id_for_label }}">{{ form.family_status.label }}</label>
-                        {{ form.family_status }}
-                    </div>
-
-                    <div class="input-group mt-2">
-                        <label class="input-group-text"
-                               for="{{ form.income_type.id_for_label }}">{{ form.income_type.label }}</label>
-                        {{ form.income_type }}
-                    </div>
-
-                    <div class="input-group mt-2">
-                        <label class="input-group-text"
-                               for="{{ form.education_type.id_for_label }}">{{ form.education_type.label }}</label>
-                        {{ form.education_type }}
-                    </div>
-
-                    <div class="input-group mt-2">
-                        <label class="input-group-text"
-                               for="{{ form.cnt_children.id_for_label }}">{{ form.cnt_children.label }}</label>
-                        {{ form.cnt_children }}
-                    </div>
-
-                    <div class="input-group mt-2">
-                        <label class="input-group-text"
-                               for="{{ form.income_total.id_for_label }}">{{ form.income_total.label }}</label>
-                        {{ form.income_total }}
-                    </div>
-                </div>
-            </div>
-
-
-            <button class="btn btn-lg btn-primary mt-4 mb-5" type="submit">Анализировать</button>
-        </form>
-
-        <div class="row">
-
+        <div class="form-check mt-2">
+            {{ form.own_car }}
+            <label class="form-check-label" for="{{ form.own_car.id_for_label }}">
+                {{ form.own_car.label }}
+            </label>
         </div>
-    </div>
+
+        <button class="btn btn-primary mt-4 mb-5" type="submit">Анализировать</button>
+    </form>
 {% endblock %}

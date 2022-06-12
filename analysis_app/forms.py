@@ -79,4 +79,6 @@ class CheckForm(forms.Form):
 
 
 class CharacteristicForm(forms.Form):
-    pass
+    own_car = forms.BooleanField(label='Машина', required=False, initial=False,
+                                 widget=forms.CheckboxInput(
+                                     attrs={'class': 'form-check-input', 'type': 'checkbox'}))

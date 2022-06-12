@@ -103,6 +103,11 @@
         </form>
 
         {% if brute_predict|length > 1 %}
+            <div class="row mt-4 text-center">
+                <h4>Главный прогноз: <b>{{ predict }}</b></h4>
+                <p style="color: #6c757d">Также вы можете ознакомиться со схожей аудиторий</p>
+            </div>
+
             <div class="row mt-3 placeForTable">
                 <table class="table">
                     <thead>

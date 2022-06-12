@@ -11,7 +11,7 @@ from .services import logic
 def index(request):
     # list_x, list_y = None, None
     data = None
-    main_predict = []
+    main_predict = 0
     brute_predict = []
     if request.method == "POST":
         form = CharacteristicForm(request.POST)
@@ -27,10 +27,10 @@ def index(request):
                 brute_data["flag_is_pensioner"] = params[3]
                 brute_data["family_status"] = params[4]
                 brute_predict.append(round(logic.predict(brute_data), 2))
-            print(data)
-            print(main_predict)
-            print("-----")
-            print(brute_predict)
+            # print(data)
+            # print(main_predict)
+            # print("-----")
+            # print(brute_predict)
             # print(predict)
             # list_x = logic.gen_redundant_data(data["salary"][0])
             # list_y = []
@@ -45,8 +45,8 @@ def index(request):
         "title": "Dashboard",
         "form": form,
         "data": data,
-        "predict": main_predict,
-        "brute_predict": brute_predict
+        "predict": str(round(main_predict, 2)) + " ₽",
+        "brute_predict": [str(item) + " ₽" for item in brute_predict]
     })
 
 

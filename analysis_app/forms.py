@@ -104,19 +104,18 @@ class CharacteristicForm(forms.Form):
     CHOICES_FAMILY_STATUS = (
         ('0', 'Холост / Не замужем'),
         ('1', 'В браке'),
-        ('2', 'Разведен(а)')
     )
     family_status = forms.ChoiceField(label='Семейный статус', choices=CHOICES_FAMILY_STATUS,
                                       widget=forms.Select(attrs={'class': 'form-select'}))
 
-    cnt_dependent_min = 0
-    cnt_dependent_max = 10
-    cnt_dependent = forms.IntegerField(label='Количество иждивенцев',
-                                       min_value=cnt_dependent_min, max_value=cnt_dependent_max,
-                                       widget=forms.NumberInput(
-                                           attrs={'type': 'number', 'class': 'form-control',
-                                                  'value': cnt_dependent_min, 'min': cnt_dependent_min,
-                                                  'max': cnt_dependent_max}))
+    # cnt_dependent_min = 0
+    # cnt_dependent_max = 10
+    # cnt_dependent = forms.IntegerField(label='Количество иждивенцев',
+    #                                    min_value=cnt_dependent_min, max_value=cnt_dependent_max,
+    #                                    widget=forms.NumberInput(
+    #                                        attrs={'type': 'number', 'class': 'form-control',
+    #                                               'value': cnt_dependent_min, 'min': cnt_dependent_min,
+    #                                               'max': cnt_dependent_max}))
 
     cnt_children_min = 0
     cnt_children_max = 10

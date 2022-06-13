@@ -1,0 +1,445 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <link href="style.css" rel="stylesheet">
+  <title>Document</title>
+</head>
+<body>
+
+  <div class="container-lg">
+    <div class="lite-header mb-3">
+      <span>
+        <h1>Введите характеристики</h1>
+      </span>
+      <span>
+        <input class="form-control main-file-input" id="formFileLg" type="file">
+      </span>
+    </div>
+
+
+
+    <div class="row">
+      <!-- Левая колонка с данными -->
+      <div class="col-4">
+        <div class="btn-group mb-2" role="group" aria-label="Basic radio toggle button group">
+          <input type="radio" class="btn-check" name="sex" id="btnradio1" autocomplete="off" checked>
+          <label class="btn btn-outline-primary" for="btnradio1">Мужчина</label>
+
+          <input type="radio" class="btn-check" name="sex" id="btnradio2" autocomplete="off">
+          <label class="btn btn-outline-primary" for="btnradio2">Женщина</label>
+        </div>
+        <hr class="col-4">
+        <div class="form-check mt-2">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault">
+            Имеет недвижимость
+          </label>
+        </div>
+
+        <div class="form-check mt-2">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault">
+            Указал личный телефон
+          </label>
+        </div>
+
+        <div class="form-check mt-2">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault">
+            Указал рабочий телефон
+          </label>
+        </div>
+
+        <div class="form-check mt-2">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault">
+            Указал электронную почту
+          </label>
+        </div>
+
+        <div class="form-check mt-2">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault">
+            Трудоустроен
+          </label>
+        </div>
+
+        <div class="form-check mt-2">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault">
+            Имеет автомобиль
+          </label>
+        </div>
+
+        <div class="form-check mt-2">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault">
+            Пенсионер
+          </label>
+        </div>
+
+        <div class="form-check mt-2">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault">
+            Резидент РФ
+          </label>
+        </div>
+      </div>
+
+
+      <!-- Правая колонка с данными -->
+      <div class="col-8">
+        <div class="input-group">
+          <label class="input-group-text" id="basic-addon1">Год рождения</label>
+          <input type="text" class="form-control" value="" placeholder="1993" aria-label="Annual Income" aria-describedby="basic-addon1">
+        </div>
+
+        <div class="input-group mt-2">
+          <label for="city-choice" class="input-group-text">Город</label>
+          <input list="cities-datalist" placeholder="Николо-Березовка" class="form-control" id="city-choice" name="city-choice"/>
+          <datalist id="cities-datalist">
+          </datalist>
+        </div>
+
+        <div class="input-group mt-2">
+          <label class="input-group-text" id="basic-addon1">Зарплата</label>
+          <input type="text" class="form-control" id="SalaryInput" value="" placeholder="30000" aria-label="Annual Income" aria-describedby="basic-addon1" onchange="updateTextInput2(this.value);">
+        </div>
+
+        <div class="input-group mt-2">
+          <label class="input-group-text" for="inputGroupSelect01">Семейный статус</label>
+          <select class="form-select" id="inputGroupSelect01">
+            <option value="1" selected>Холост / Не замужем</option>
+            <option value="2">В браке</option>
+          </select>
+        </div>
+
+        <div class="input-group mt-2">
+          <label class="input-group-text" id="basic-addon1">Количество детей</label>
+          <input type="text" class="form-control" value="" placeholder="0" aria-label="Amount of Children" aria-describedby="basic-addon1">
+        </div>
+
+        <div class="input-group mt-2">
+          <label class="input-group-text" for="inputGroupSelect01">Уровень образования</label>
+          <select class="form-select" id="inputGroupSelect01">
+            <option value="1">Дошкольное</option>
+            <option value="2">Начальное</option>
+            <option value="3" selected>Основное общее</option>
+            <option value="4">Основное специальное</option>
+            <option value="5">Высшее</option>
+          </select>
+        </div>
+
+        <div class="input-group mt-2">
+          <label class="input-group-text" id="basic-addon1">Годовой доход</label>
+          <input type="text" class="form-control" value="" placeholder="500000" aria-label="Annual Income" aria-describedby="basic-addon1">
+        </div>
+
+        <div class="input-group mt-2">
+          <label class="input-group-text" id="basic-addon1">Семейный доход</label>
+          <input type="text" class="form-control" value="" placeholder="1000000" aria-label="Annual Income" aria-describedby="basic-addon1">
+        </div>
+      </div>
+    </div>
+
+    <div class="row Analize mt-4">
+      <button type="button" onclick="insertResult()" class="btn btn-primary btn-lg">Analyze</button>
+    </div>
+
+<!--     <div class="row">
+      <div class="rainbow">
+        <div>Здесь будет Аналитика...</div>
+      </div>
+    </div> -->
+
+    <div class="row mt-3 placeForCharts">
+      <!-- <canvas class="firstGraph"></canvas> -->
+    </div>
+    <div class="row mt-3 placeForTable">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Результат</th>
+            <th scope="col">Недвижимость</th>
+            <th scope="col">Автомобиль</th>
+            <th scope="col">Трудоустроен</th>
+            <th scope="col">Пенсионер</th>
+            <th scope="col">В браке</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row" class="result31"></th>
+            <td class="Yes">Да</td>
+            <td class="Yes">Да</td>
+            <td class="Yes">Да</td>
+            <td class="Yes">Да</td>
+            <td class="Yes">Да</td>
+          </tr>
+          <tr>
+            <th scope="row" class="result30"></th>
+            <td class="Yes">Да</td>
+            <td class="Yes">Да</td>
+            <td class="Yes">Да</td>
+            <td class="Yes">Да</td>
+            <td class="No">Нет</td>
+          </tr>
+          <tr>
+            <th scope="row" class="result29"></th>
+            <td class="Yes">Да</td>
+            <td class="Yes">Да</td>
+            <td class="Yes">Да</td>
+            <td class="No">Нет</td>
+            <td class="Yes">Да</td>
+          </tr>
+          <tr>
+            <th scope="row" class="result28"></th>
+            <td class="Yes">Да</td>
+            <td class="Yes">Да</td>
+            <td class="Yes">Да</td>
+            <td class="No">Нет</td>
+            <td class="No">Нет</td>
+          </tr>
+          <tr>
+            <th scope="row" class="result27"></th>
+            <td class="Yes">Да</td>
+            <td class="Yes">Да</td>
+            <td class="No">Нет</td>
+            <td class="Yes">Да</td>
+            <td class="Yes">Да</td>
+          </tr>
+          <tr>
+            <th scope="row" class="result26"></th>
+            <td class="Yes">Да</td>
+            <td class="Yes">Да</td>
+            <td class="No">Нет</td>
+            <td class="Yes">Да</td>
+            <td class="No">Нет</td>
+          </tr>
+          <tr>
+            <th scope="row" class="result25"></th>
+            <td class="Yes">Да</td>
+            <td class="Yes">Да</td>
+            <td class="No">Нет</td>
+            <td class="No">Нет</td>
+            <td class="Yes">Да</td>
+          </tr>
+          <tr>
+            <th scope="row" class="result24"></th>
+            <td class="Yes">Да</td>
+            <td class="Yes">Да</td>
+            <td class="No">Нет</td>
+            <td class="No">Нет</td>
+            <td class="No">Нет</td>
+          </tr>
+          <tr>
+            <th scope="row" class="result23"></th>
+            <td class="Yes">Да</td>
+            <td class="No">Нет</td>
+            <td class="Yes">Да</td>
+            <td class="Yes">Да</td>
+            <td class="Yes">Да</td>
+          </tr>
+          <tr>
+            <th scope="row" class="result22"></th>
+            <td class="Yes">Да</td>
+            <td class="No">Нет</td>
+            <td class="Yes">Да</td>
+            <td class="Yes">Да</td>
+            <td class="No">Нет</td>
+          </tr>
+          <tr>
+            <th scope="row" class="result21"></th>
+            <td class="Yes">Да</td>
+            <td class="No">Нет</td>
+            <td class="Yes">Да</td>
+            <td class="No">Нет</td>
+            <td class="Yes">Да</td>
+          </tr>
+          <tr>
+            <th scope="row" class="result20"></th>
+            <td class="Yes">Да</td>
+            <td class="No">Нет</td>
+            <td class="Yes">Да</td>
+            <td class="No">Нет</td>
+            <td class="No">Нет</td>
+          </tr>
+          <tr>
+            <th scope="row" class="result19"></th>
+            <td class="Yes">Да</td>
+            <td class="No">Нет</td>
+            <td class="No">Нет</td>
+            <td class="Yes">Да</td>
+            <td class="Yes">Да</td>
+          </tr>
+          <tr>
+            <th scope="row" class="result18"></th>
+            <td class="Yes">Да</td>
+            <td class="No">Нет</td>
+            <td class="No">Нет</td>
+            <td class="Yes">Да</td>
+            <td class="No">Нет</td>
+          </tr>
+          <tr>
+            <th scope="row" class="result17"></th>
+            <td class="Yes">Да</td>
+            <td class="No">Нет</td>
+            <td class="No">Нет</td>
+            <td class="No">Нет</td>
+            <td class="Yes">Да</td>
+          </tr>
+          <tr>
+            <th scope="row" class="result16"></th>
+            <td class="Yes">Да</td>
+            <td class="No">Нет</td>
+            <td class="No">Нет</td>
+            <td class="No">Нет</td>
+            <td class="No">Нет</td>
+          </tr>
+          <tr>
+            <th scope="row" class="result15"></th>
+            <td class="No">Нет</td>
+            <td class="Yes">Да</td>
+            <td class="Yes">Да</td>
+            <td class="Yes">Да</td>
+            <td class="Yes">Да</td>
+          </tr>
+          <tr>
+            <th scope="row" class="result14"></th>
+            <td class="No">Нет</td>
+            <td class="Yes">Да</td>
+            <td class="Yes">Да</td>
+            <td class="Yes">Да</td>
+            <td class="No">Нет</td>
+          </tr>
+          <tr>
+            <th scope="row" class="result13"></th>
+            <td class="No">Нет</td>
+            <td class="Yes">Да</td>
+            <td class="Yes">Да</td>
+            <td class="No">Нет</td>
+            <td class="Yes">Да</td>
+          </tr>
+          <tr>
+            <th scope="row" class="result12"></th>
+            <td class="No">Нет</td>
+            <td class="Yes">Да</td>
+            <td class="Yes">Да</td>
+            <td class="No">Нет</td>
+            <td class="No">Нет</td>
+          </tr>
+          <tr>
+            <th scope="row" class="result11"></th>
+            <td class="No">Нет</td>
+            <td class="Yes">Да</td>
+            <td class="No">Нет</td>
+            <td class="Yes">Да</td>
+            <td class="Yes">Да</td>
+          </tr>
+          <tr>
+            <th scope="row" class="result10"></th>
+            <td class="No">Нет</td>
+            <td class="Yes">Да</td>
+            <td class="No">Нет</td>
+            <td class="Yes">Да</td>
+            <td class="No">Нет</td>
+          </tr>
+          <tr>
+            <th scope="row" class="result9"></th>
+            <td class="No">Нет</td>
+            <td class="Yes">Да</td>
+            <td class="No">Нет</td>
+            <td class="No">Нет</td>
+            <td class="Yes">Да</td>
+          </tr>
+          <tr>
+            <th scope="row" class="result8"></th>
+            <td class="No">Нет</td>
+            <td class="Yes">Да</td>
+            <td class="No">Нет</td>
+            <td class="No">Нет</td>
+            <td class="No">Нет</td>
+          </tr>
+          <tr>
+            <th scope="row" class="result7"></th>
+            <td class="No">Нет</td>
+            <td class="No">Нет</td>
+            <td class="Yes">Да</td>
+            <td class="Yes">Да</td>
+            <td class="Yes">Да</td>
+          </tr>
+          <tr>
+            <th scope="row" class="result6"></th>
+            <td class="No">Нет</td>
+            <td class="No">Нет</td>
+            <td class="Yes">Да</td>
+            <td class="Yes">Да</td>
+            <td class="No">Нет</td>
+          </tr>
+          <tr>
+            <th scope="row" class="result5"></th>
+            <td class="No">Нет</td>
+            <td class="No">Нет</td>
+            <td class="Yes">Да</td>
+            <td class="No">Нет</td>
+            <td class="Yes">Да</td>
+          </tr>
+          <tr>
+            <th scope="row" class="result4"></th>
+            <td class="No">Нет</td>
+            <td class="No">Нет</td>
+            <td class="Yes">Да</td>
+            <td class="No">Нет</td>
+            <td class="No">Нет</td>
+          </tr>
+          <tr>
+            <th scope="row" class="result3"></th>
+            <td class="No">Нет</td>
+            <td class="No">Нет</td>
+            <td class="No">Нет</td>
+            <td class="Yes">Да</td>
+            <td class="Yes">Да</td>
+          </tr>
+          <tr>
+            <th scope="row" class="result2"></th>
+            <td class="No">Нет</td>
+            <td class="No">Нет</td>
+            <td class="No">Нет</td>
+            <td class="Yes">Да</td>
+            <td class="No">Нет</td>
+          </tr>
+          <tr>
+            <th scope="row" class="result1"></th>
+            <td class="No">Нет</td>
+            <td class="No">Нет</td>
+            <td class="No">Нет</td>
+            <td class="No">Нет</td>
+            <td class="Yes">Да</td>
+          </tr>
+          <tr>
+            <th scope="row" class="result0"></th>
+            <td class="No">Нет</td>
+            <td class="No">Нет</td>
+            <td class="No">Нет</td>
+            <td class="No">Нет</td>
+            <td class="No">Нет</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

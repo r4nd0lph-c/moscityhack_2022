@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,900&family=Open+Sans:wght@800&family=Roboto+Mono:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;1,900&family=Open+Sans:wght@800&family=Roboto+Mono:wght@700&display=swap');
+.btn-outline-primary {
+	width: 50%;
+	border: 3px outset blue;
+	/*display: none !important;*/
+}
+h1 {
+	font-size: 30px;
+}
+h3 {
+	font-size: 23px;
+}
+.input-group label {
+	width: 40%;
+}
+.container-lg {
+	margin-top: 20px;
+}
+.rainbow {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 100px;
+	width: 100%;
+	height: 500px;
+	/*border: 3px solid red;*/
+
+	animation-name: kek;
+	animation-duration: 5s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	/*background: linear-gradient(45deg, red, orange, yellow, green, blue, purple);*/
+	/*background-color: red;*/
+}
+.rainbow div {
+	color: white;
+	font-size: 40px;
+	font-family: 'Roboto Mono', monospace;
+	text-shadow: black 10px 0 10px;
+}
+.main-file-input {
+	border: 4px outset gray;
+	background-color: #0d6efd;
+	border-radius: 50px;
+	color: white;
+}
+.lite-header {
+	width: 100%;
+	/*border: 1px solid red;*/
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+
+
+#SalaryInput {
+	/*border: none;*/
+}
+
+div.SalaryInput {
+	display: flex;
+	justify-content: space-between;
+}
+div.SalaryInput input {
+	width: 90%;
+}
+div.SalaryInput span {
+	font-weight: 400;
+}
+
+.Analize {
+	display: flex;
+	justify-content: center;
+}
+.Analize button {
+	width: 400px;
+	margin-top: 20px;
+}
+.Analize button {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+}
+.Analize button.pressed {
+	background-color: gray;
+}
+hr {
+	/*height: 5px;*/
+}
+input#city-choice {
+	border-radius: 0 5px 5px 0;
+}
+.Yes {
+	color: green;
+}
+.No {
+	color: red;
+}
+table tbody tr:nth-child(1) {
+	/*display: none;*/
+}
+
+
+
+
+@keyframes kek {
+	0% {
+		background-color: cyan;
+	}
+	33% {
+		background-color: lightblue;
+	}
+	66% {
+		background-color: blue;
+	}
+	100% {
+		background-color: cyan;
+	}
+}
